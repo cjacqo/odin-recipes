@@ -70,48 +70,116 @@ function handleAnimations(prev, clicked) {
             image.classList.remove('hidden')
             image.classList.add('active')
 
-            // animate the content container to shrink down to default size
-            content.classList.remove('full')
-            content.classList.add('default')
-
-            // animate opacity of content
-            detailsContainer.classList.remove('hidden')
-            detailsContainer.classList.add('active')
-
             ingredientsContainer.classList.remove('active')
             ingredientsContainer.classList.add('hidden')
 
             recipeContainer.classList.remove('active')
             recipeContainer.classList.add('hidden')
-            return;
-        default:
-            // animate image to close from bottom to top
-            image.classList.add('hidden')
-            image.classList.remove('active')
 
-            // animate the content container to grow up to full size
-            content.classList.add('full')
-            content.classList.remove('default')
+            // animate the content container to shrink down to default size
+            // content.classList.remove('full')
+            // content.classList.add('default')
+
+            // timeout to remove 'display: none' from details container
+            // --- after animations end
+            setTimeout(() => {
+                detailsContainer.classList.remove('displayNone')
+            }, 550)
 
             // animate opacity of content
-            detailsContainer.classList.add('hidden')
-            detailsContainer.classList.remove('active')
+            detailsContainer.classList.remove('hidden')
+            detailsContainer.classList.add('active')
 
-            // check the clicked id
-            if (clickedId === 'ingredientsBtn') {
-                console.log("INDNDN")
-                ingredientsContainer.classList.remove('hidden')
-                ingredientsContainer.classList.add('active')
+            
+            return;
+        default:
+            // check if prev active is detailsBtn
+            if (prevId === 'detailsBtn') {
+                // animate opacity of content
+                detailsContainer.classList.remove('active')
+                detailsContainer.classList.add('hidden')
 
-                recipeContainer.classList.remove('active')
-                recipeContainer.classList.add('hidden')                
-            } else {
-                recipeContainer.classList.remove('hidden')
-                recipeContainer.classList.add('active')
+                // timeout to add 'display: none' to details container
+                // --- after animations end
+                setTimeout(() => {
+                    detailsContainer.classList.remove('hidden')
+                    detailsContainer.classList.add('displayNone')
+                    
+                    // animate image to close from bottom to top
+                    image.classList.add('hidden')
+                    image.classList.remove('active')
+
+                    if (clickedId === 'ingredientsBtn') {
+                        ingredientsContainer.classList.remove('displayNone')
+                        ingredientsContainer.classList.remove('hidden')
+                        ingredientsContainer.classList.add('active')
+                    } else {
+                        recipeContainer.classList.remove('displayNone')
+                        recipeContainer.classList.remove('hidden')
+                        recipeContainer.classList.add('active')
+                    }
+                }, 550)
+
                 
-                ingredientsContainer.classList.remove('active')
-                ingredientsContainer.classList.add('hidden')
+                // animate the content container to grow up to full size
+                // content.classList.add('full')
+                // content.classList.remove('default')
+            } else {
+                if (prevId === 'recipeBtn') {
+                    recipeContainer.classList.remove('active')
+                    recipeContainer.classList.add('hidden')
+                    recipeContainer.classList.add('displayNone')
+                    
+                    if (clickedId === 'ingredientsBtn') {
+                        ingredientsContainer.classList.remove('displayNone')
+                        ingredientsContainer.classList.remove('hidden')
+                        ingredientsContainer.classList.add('active')
+                    } else {
+                        detailsContainer.classList.remove('displayNone')
+                        detailsContainer.classList.remove('hidden')
+                        detailsContainer.classList.add('active')
+                    }
+                } else {
+                    ingredientsContainer.classList.remove('active')
+                    ingredientsContainer.classList.add('hidden')
+                    ingredientsContainer.classList.add('displayNone')
+                    if (clickedId === 'recipeBtn') {
+                        recipeContainer.classList.remove('displayNone')
+                        recipeContainer.classList.remove('hidden')
+                        recipeContainer.classList.add('active')
+                    } else {
+                        detailsContainer.classList.remove('displayNone')
+                        detailsContainer.classList.remove('hidden')
+                        detailsContainer.classList.add('active')
+                    }
+                }
             }
+
+            // // check the clicked id
+            // if (clickedId === 'ingredientsBtn') {
+            //     if (prevId === 'recipeBtn') {
+            //         ingredientsContainer.classList.remove('farLeft')
+            //         ingredientsContainer.classList.add('pushLeft')
+
+            //         recipeContainer.classList.remove('pushRight')
+            //         recipeContainer.classList.add('farRight')
+            //     }
+                
+            //     ingredientsContainer.classList.remove('displayNone')
+            //     ingredientsContainer.classList.remove('hidden')
+            //     ingredientsContainer.classList.add('active')
+
+            //     if (prevId === 'recipeBtn') {
+            //         ingredientsContainer.classList.remove('active')
+            //         ingredientsContainer.classList.add('hidden')
+            //         ingredientsContainer.classList.add('displayNone')
+            //     }
+
+            // } else if (clickedId === 'recipeBtn') {
+            //     recipeContainer.classList.remove('displayNone')
+            //     recipeContainer.classList.remove('hidden')
+            //     recipeContainer.classList.add('active')
+            // }
 
             return;
     }    

@@ -81,26 +81,40 @@
     /* display: none !important; */
 }
 
-.container.active {
+/* .container.active {
     transform: scale(1);
     opacity: 1;
-    transition: transform 500ms ease-in, opacity 500ms ease-in;
-}
+    transition: transform 500ms ease-in;
+} */
 
 .container.details.hidden {
-    position: absolute;
+    position: relative;
+    animation: topDown 350ms ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes topDown {
+    from {
+        top: 0;
+    }
+    to {
+        top: 300px;
+    }
 }
 
 .container.details.active {
     height: 100%;
 }
 
-.container.details.hidden,
+.displayNone {
+    display: none !important;
+}
+
 .container.ingredients.hidden,
 .container.recipe.hidden {
-    height: 0;
-    transform: scale(0);
-    transition: transform 500ms ease-in;
+    animation: bottomUp 350ms ease-in;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
 }
 
 .container.ingredients.active,
@@ -110,19 +124,18 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    animation: bottomUp 350ms ease-in;
+    animation-fill-mode: forwards;
+    opacity: 1;
     background-color: #fff;
 }
 
-@keyframes opacity {
+@keyframes bottomUp {
     from {
-        display: none;
-        opacity: 0
-    }
-    5% {
-        display: block;
+        bottom: -100px;
     }
     to {
-        opacity: 1;
+        bottom: 0;
     }
 }
 
