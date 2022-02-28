@@ -15,10 +15,10 @@
 <body>
     <main class="recipe-details main">
         <!-- 
-            Recipe Header: image, name, duration (prep, cook, total), 
+            Recipe section: image, name, duration (prep, cook, total), 
                            # of people fed 
         -->
-        <header class="recipe-details header">
+        <section class="recipe-details section">
             <!-- Image -->
             <div class="recipe-details box image">
                 <img src="../imgs/lasagna.jpg" alt="lasagna" />
@@ -78,11 +78,23 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Buttons -->
-
                 </div>
             </div>
-        </header>
+        </section>
+        <sidebar class="recipe-details sidebar">
+            <!-- Buttons -->
+            <div class="wrapper buttons">
+                <div class="equal-item link active">
+                    <a href="#">Details</a>
+                </div>
+                <div class="equal-item link">
+                    <a href="#">Ingredients</a>
+                </div>
+                <div class="equal-item link">
+                    <a href="#">Recipe</a>
+                </div>
+            </div>
+        </sidebar>
     </main>
 </body>
 </html>
