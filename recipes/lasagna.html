@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="recipes.css">
     <title>Odin Recipes | Lasagna</title>
 </head>
 <body>
-    <main>
+    <main class="recipe-details main">
         <!-- 
-            Recipe Details: image, name, duration (prep, cook, total), 
-                            # of people fed 
+            Recipe Header: image, name, duration (prep, cook, total), 
+                           # of people fed 
         -->
         <header class="recipe-details header">
             <!-- Image -->
             <div class="recipe-details box image">
-                <img src="../imgs/lasagna.jpg" />
-            </div>
-            <!-- Title -->
-            <div class="recipe-details box title">
-                <h1>Lasagna</h1>
+                <img src="../imgs/lasagna.jpg" alt="lasagna" />
             </div>
             <!-- Details -->
-            <div class="recipe-details box details">
-                <div class="recipe-details text">
-                    <p><span class="bold">Prep:&nbsp;</span>30 mins</p>
+            <div class="recipe-details box info">
+                <!-- Title -->
+                <div class="container title">
+                    <h3>Lasagna</h3>
                 </div>
-                <div class="recipe-details text">
-                    <p><span class="bold">Cook:&nbsp;</span>2hrs 30 mins</p>
-                </div>
-                <div class="recipe-details text">
-                    <p><span class="bold">Additional:&nbsp;</span>15 mins</p>
-                </div>
-                <div class="recipe-details text">
-                    <p><span class="bold">Total:&nbsp;</span>3hrs 15 mins</p>
-                </div>
-                <div class="recipe-details text">
-                    <p><span class="bold">Servings:&nbsp;</span>12 mins</p>
+
+                <!-- Recipe Details -->
+                <div class="container details">
+                    <div class="recipe-details text">
+                        <p><span class="bold">Prep:&nbsp;</span>30 mins</p>
+                    </div>
+                    <div class="recipe-details text">
+                        <p><span class="bold">Cook:&nbsp;</span>2hrs 30 mins</p>
+                    </div>
+                    <div class="recipe-details text">
+                        <p><span class="bold">Additional:&nbsp;</span>15 mins</p>
+                    </div>
+                    <div class="recipe-details text">
+                        <p><span class="bold">Total:&nbsp;</span>3hrs 15 mins</p>
+                    </div>
+                    <div class="recipe-details text">
+                        <p><span class="bold">Servings:&nbsp;</span>12</p>
+                    </div>
                 </div>
             </div>
         </header>

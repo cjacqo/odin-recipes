@@ -1,0 +1,80 @@
+/* RECIPE STYLES */
+/* -- layout styles */
+.recipe-details.main {
+    height: 100%;
+}
+
+.recipe-details.header {
+}
+
+.recipe-details.box.image {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Gradient Over Image */
+.recipe-details.box.image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0,0,0,0.15); */
+}
+
+.recipe-details.box.info {
+    position: relative;
+    bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,0.6853146853146853) 22%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.6853146853146853) 22%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.6853146853146853) 22%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+.recipe-details.box > .container.title {
+    width: 80%;
+}
+
+.recipe-details.box > .container.title > h3 {
+    margin-top: 0.8333rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-details.box > .container.details {
+    height: 200px;
+    width: 80%;
+    
+}
+
+.recipe-details.box > .container.details > * {
+    
+}
+
+.recipe-details.box > .container.details > * > p {
+    margin: 0;
+    padding: 0;
+}
+
+/* -- image styles */
+img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+/* -- text styles */
+.container.title > h3 {
+    font-size: 2.369rem;
+    font-weight: bold;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+}
