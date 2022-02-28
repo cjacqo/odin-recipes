@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Varela+Round&display=swap" rel="stylesheet">
@@ -11,7 +12,54 @@
     <title>Odin Recipes</title>
 </head>
 <body>
-    <h1>Odin Recipes</h1>
-    <a href="recipes/lasagna.html">Lasagna</a>
+    <h2 class="site-title">Recipes</h2>
+    <ul class="recipes-list container">
+        <li class="recipes-list item">
+            <div class="recipe-card container">
+                <img src="imgs/lasagna.jpg" alt="lasagna" />
+                <div class="card-details-wrapper">
+                    <div class="card-title">
+                        <a href="recipes/lasagna.html">
+                            <div class="wrapper">
+                                <h4>Lasagna</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-details">
+                        <ul class="recipe-details-list container">
+                            <li class="recipe-details-list item">
+                                <div class="icon container">
+                                    <i class="fa-solid fa-stopwatch"></i>
+                                </div>
+                                <div class="text container">
+                                    <p>3h 15m</p>
+                                </div>
+                            </li>
+                            <li class="recipe-details-list item">
+                                <div class="icon container">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </div>
+                                <div class="text container">
+                                    <p>12</p>
+                                </div>
+                            </li>
+
+                            <li class="recipe-details-list item">
+                                <div class="icon container like">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </li>
+                            <li class="recipe-details-list item">
+                                <div class="text container">
+                                    <p>Hard</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
 </body>
 </html>
