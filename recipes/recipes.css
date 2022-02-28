@@ -2,6 +2,7 @@
 /* -- layout styles */
 .recipe-details.main {
     height: 100%;
+    position: relative;
 }
 
 .recipe-details.header {
@@ -22,30 +23,31 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0,0,0,0.15); */
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.03962703962703962) 0%, rgba(255,255,255,0.337995337995338) 35%, rgba(51,51,51,0.12121212121212122) 55%, rgba(0,0,0,0.5011655011655012) 100%);
 }
 
 .recipe-details.box.info {
     color: #444;
-    position: relative;
-    bottom: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255, 0.5757575757575757) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
 }
 
 .recipe-details.box > .container.title {
-    width: 80%;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    /* top: -2.5rem; */
 }
 
 .recipe-details.box > .container.details {
     height: 100%;
     width: 80%;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,7 +60,7 @@
 }
 
 .recipe-details.box > .container.details > .wrapper.time {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 .recipe-details.box > .container.details > .wrapper > .box {
@@ -77,23 +79,24 @@
 
 /* -- image styles */
 img {
+    display: block;
     width: 100%;
-    height: 550px;
+    height: 350px;
     object-fit: cover;
+    object-position: 0 -50px;
 }
 
 /* -- text styles */
-.container.title > h3 {
-    color: #222;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 2.369rem;
+.container.title > .text-el {
+    color: #333;
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.35rem;
     text-transform: uppercase;
 }
 
-.recipe-details.box > .container.details > .wrapper > .box.title > h5 {
+.recipe-details.box > .container.details > .wrapper > .box.title > .text-el {
     margin: 0;
     padding: 0;
 }
