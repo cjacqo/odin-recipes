@@ -325,7 +325,7 @@ img {
 
 .container.title > .back-icon {
     position: absolute;
-    top: 1.555rem;
+    top: 1rem;
     left: 1rem;
     cursor: pointer
 }
@@ -340,6 +340,7 @@ img {
 .container.title > .text-el {
     color: #333;
     margin: 1rem;
+    font-size: calc(100% + 2vw);
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.35rem;
     text-transform: uppercase;
