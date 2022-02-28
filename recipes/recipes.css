@@ -50,16 +50,22 @@
 }
 
 .recipe-details.box > .container.details {
-    height: 200px;
+    height: 100%;
     width: 80%;
-    
+    display: flex;
+    justify-content: space-between;
 }
 
-.recipe-details.box > .container.details > * {
-    
+.recipe-details.box > .container.details > .wrapper {
+    flex: 1;
 }
 
-.recipe-details.box > .container.details > * > p {
+.recipe-details.box > .container.details > .wrapper > .title > h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.recipe-details.box > .container.details > .wrapper > p {
     margin: 0;
     padding: 0;
 }
