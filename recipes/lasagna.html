@@ -16,20 +16,20 @@
     <main class="recipe-details main">
         <!-- Image -->
         <section class="recipe-details section">
-            <div class="recipe-details box image hidden">
+            <div class="recipe-details box image" id="imageContainer">
                 <img src="../imgs/lasagna.jpg" alt="lasagna" />
             </div>
         </section>
 
         <!-- Details -->
-        <section class="recipe-details box info full">
+        <section class="recipe-details box info" id="content">
             <!-- Title -->
             <div class="container title">
                 <h3 class="text-el">Lasagna</h3>
             </div>
 
             <!-- Recipe Details -->
-            <div class="container details hidden">
+            <div class="container details active" id="detailsContainer">
                 <!-- Time -->
                 <div class="wrapper time">
                     <div class="container equal-item">
@@ -79,7 +79,7 @@
             </div>
 
             <!-- Recipe Ingredients -->
-            <div class="container ingredients active">
+            <div class="container ingredients hidden" id="ingredientsContainer">
                 <!-- Title -->
                 <div class="wrapper title">
                     <h5>Ingredients</h5>
@@ -98,22 +98,33 @@
                     <p>Hi</p>
                 </div>
             </div>
+
+            <!-- Recipe -->
+            <div class="container recipe hidden" id="recipeContainer">
+                <!-- Title -->
+                <div class="wrapper title">
+                    <h5>Steps</h5>
+                </div>
+            </div>
         </section>
 
         <sidebar class="recipe-details sidebar">
             <!-- Buttons -->
             <div class="wrapper buttons">
-                <div class="equal-item link active">
+                <div class="equal-item link active" id="detailsBtn">
                     <a href="#">Details</a>
                 </div>
-                <div class="equal-item link">
+                <div class="equal-item link" id="ingredientsBtn">
                     <a href="#">Ingredients</a>
                 </div>
-                <div class="equal-item link">
+                <div class="equal-item link" id="recipeBtn">
                     <a href="#">Recipe</a>
                 </div>
             </div>
         </sidebar>
     </main>
+
+    <!-- Script Tag -->
+    <script src="js/script.js"></script>
 </body>
 </html>

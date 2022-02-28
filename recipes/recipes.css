@@ -82,6 +82,10 @@
     background-color: #fff;
 }
 
+.container.ingredients.hidden {
+    display: none;
+}
+
 .container.ingredients > .title > h5 {
     margin: 0;
 }
