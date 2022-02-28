@@ -3,7 +3,6 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
     font-size: 100%;
 }
 
@@ -11,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
+    font-family: 'Varela Round', sans-serif;
 }
 
 /* -- text styles */
@@ -49,6 +49,10 @@ p {
 
 .xs-text {
     font-size: 0.422rem;
+}
+
+.varela {
+    font-family: 'Varela Round', sans-serif;
 }
 
 .bold {
