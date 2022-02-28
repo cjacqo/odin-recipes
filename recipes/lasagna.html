@@ -14,73 +14,79 @@
 </head>
 <body>
     <main class="recipe-details main">
-        <!-- 
-            Recipe section: image, name, duration (prep, cook, total), 
-                           # of people fed 
-        -->
+        <!-- Image -->
         <section class="recipe-details section">
-            <!-- Image -->
             <div class="recipe-details box image">
                 <img src="../imgs/lasagna.jpg" alt="lasagna" />
             </div>
-            <!-- Details -->
-            <div class="recipe-details box info">
-                <!-- Title -->
-                <div class="container title">
-                    <h3 class="text-el">Lasagna</h3>
-                </div>
+        </section>
 
-                <!-- Recipe Details -->
-                <div class="container details">
-                    <!-- Time -->
-                    <div class="wrapper time">
-                        <div class="container equal-item">
-                            <div class="wrapper top">
-                                <small id="prep">Prep</small>
-                            </div>
-                            <div class="wrapper bottom">
-                                <p class="text-el">30m</p>
-                            </div>
+        <!-- Details -->
+        <section class="recipe-details box info">
+            <!-- Title -->
+            <div class="container title">
+                <h3 class="text-el">Lasagna</h3>
+            </div>
+
+            <!-- Recipe Details -->
+            <div class="container details active">
+                <!-- Time -->
+                <div class="wrapper time">
+                    <div class="container equal-item">
+                        <div class="wrapper top">
+                            <small id="prep">Prep</small>
                         </div>
-                        <div class="container equal-item">
-                            <div class="wrapper top">
-                                <small id="cook">Cook</small>
-                            </div>
-                            <div class="wrapper bottom">
-                                <p class="text-el">2h 30m</p>
-                            </div>
-                        </div>
-                        <div class="container equal-item">
-                            <div class="wrapper top">
-                                <small id="other">Other</small>
-                            </div>
-                            <div class="wrapper bottom">
-                                <p class="text-el">15m</p>
-                            </div>
-                        </div>
-                        <div class="container equal-item">
-                            <div class="wrapper top">
-                                <small id="total">Total</small>
-                            </div>
-                            <div class="wrapper bottom">
-                                <p class="text-el">3h 15m</p>
-                            </div>
+                        <div class="wrapper bottom">
+                            <p class="text-el">30m</p>
                         </div>
                     </div>
-                    <!-- Servings -->
-                    <div class="wrapper servings">
-                        <div class="box icon small-item">
-                            <i class="fa-solid fa-utensils"></i>
+                    <div class="container equal-item">
+                        <div class="wrapper top">
+                            <small id="cook">Cook</small>
                         </div>
-                        <div class="box content small-item">
-                            <div class="text">
-                                <p class="text-el">12 Servings</p>
-                            </div>
+                        <div class="wrapper bottom">
+                            <p class="text-el">2h 30m</p>
+                        </div>
+                    </div>
+                    <div class="container equal-item">
+                        <div class="wrapper top">
+                            <small id="other">Other</small>
+                        </div>
+                        <div class="wrapper bottom">
+                            <p class="text-el">15m</p>
+                        </div>
+                    </div>
+                    <div class="container equal-item">
+                        <div class="wrapper top">
+                            <small id="total">Total</small>
+                        </div>
+                        <div class="wrapper bottom">
+                            <p class="text-el">3h 15m</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Servings -->
+                <div class="wrapper servings">
+                    <div class="box icon small-item">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="box content small-item">
+                        <div class="text">
+                            <p class="text-el">12 Servings</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Recipe Ingredients -->
+            <div class="container ingredients hidden">
+                <!-- Title -->
+                <div class="wrapper title">
+                    <h5>Ingredients</h5>
+                </div>
+            </div>
         </section>
+
         <sidebar class="recipe-details sidebar">
             <!-- Buttons -->
             <div class="wrapper buttons">

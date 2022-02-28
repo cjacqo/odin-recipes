@@ -112,7 +112,8 @@
 }
 
 .wrapper.buttons > .link:hover {
-    background-color: rgba(255, 255, 255, 0.192)
+    background-color: rgba(255, 255, 255, 0.192);
+    cursor: pointer;
 }
 
 .wrapper.buttons > .link > a {
@@ -126,7 +127,7 @@
 
 /* ---- active button */
 .wrapper.buttons > .link.active {
-    background-color: #eee;
+    background-color: #fff;
 }
 
 .wrapper.buttons > .link.active > a {
