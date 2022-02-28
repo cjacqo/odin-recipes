@@ -30,7 +30,7 @@ ingredients.forEach(function(ingredient) {
     }
 
     // Create value for icon
-    let checkMark = '<i class="fa-solid fa-check"></i>'
+    let checkMark = '<i class="fa-solid fa-times"></i>'
 
     ingredient.addEventListener('click', function() {
         isChecked = !isChecked
@@ -72,13 +72,11 @@ function handleAnimations(prev, clicked) {
 
             ingredientsContainer.classList.remove('active')
             ingredientsContainer.classList.add('hidden')
+            ingredientsContainer.classList.add('displayNone')
 
             recipeContainer.classList.remove('active')
             recipeContainer.classList.add('hidden')
-
-            // animate the content container to shrink down to default size
-            // content.classList.remove('full')
-            // content.classList.add('default')
+            recipeContainer.classList.add('displayNone')
 
             // timeout to remove 'display: none' from details container
             // --- after animations end
@@ -119,11 +117,6 @@ function handleAnimations(prev, clicked) {
                         recipeContainer.classList.add('active')
                     }
                 }, 550)
-
-                
-                // animate the content container to grow up to full size
-                // content.classList.add('full')
-                // content.classList.remove('default')
             } else {
                 if (prevId === 'recipeBtn') {
                     recipeContainer.classList.remove('active')
@@ -154,33 +147,6 @@ function handleAnimations(prev, clicked) {
                     }
                 }
             }
-
-            // // check the clicked id
-            // if (clickedId === 'ingredientsBtn') {
-            //     if (prevId === 'recipeBtn') {
-            //         ingredientsContainer.classList.remove('farLeft')
-            //         ingredientsContainer.classList.add('pushLeft')
-
-            //         recipeContainer.classList.remove('pushRight')
-            //         recipeContainer.classList.add('farRight')
-            //     }
-                
-            //     ingredientsContainer.classList.remove('displayNone')
-            //     ingredientsContainer.classList.remove('hidden')
-            //     ingredientsContainer.classList.add('active')
-
-            //     if (prevId === 'recipeBtn') {
-            //         ingredientsContainer.classList.remove('active')
-            //         ingredientsContainer.classList.add('hidden')
-            //         ingredientsContainer.classList.add('displayNone')
-            //     }
-
-            // } else if (clickedId === 'recipeBtn') {
-            //     recipeContainer.classList.remove('displayNone')
-            //     recipeContainer.classList.remove('hidden')
-            //     recipeContainer.classList.add('active')
-            // }
-
             return;
     }    
 }
@@ -209,85 +175,3 @@ buttons.forEach(function(button) {
         }
     })
 })
-
-// Details onClick
-// detailsClicked.onclick = function() {
-//     if (this.classList.contains('active')) {
-//         return
-//     } else {
-//         // Display Content Container
-//         detailsContainer.classList.remove('hidden')
-//         detailsContainer.classList.add('active')
-
-//         // Toggle Button Styles
-//         // detailsClicked.classList.add('active')
-//         // ingredientsClicked.classList.remove('active')
-//         // recipeClicked.classList.remove('active')
-
-//         // Remove class names of 'hidden' & 'full' & 'active' on elements
-//         image.classList.remove('hidden')
-//         image.classList.add('active')
-//         content.classList.remove('full')
-//         content.classList.add('default')
-
-//         ingredientsContainer.classList.remove('active')
-//         recipeContainer.classList.remove('active')
-
-//         ingredientsContainer.classList.add('hidden')
-//         recipeContainer.classList.add('hidden')
-//     }
-// }
-
-// Ingredients onClick
-// ingredientsClicked.onclick = function() {
-//     if (this.classList.contains('active')) {
-//         return
-//     } else {
-//         // Display Content Container
-//         ingredientsContainer.classList.remove('hidden')
-//         ingredientsContainer.classList.add('active')
-
-//         // Toggle Button Styles
-//         // ingredientsClicked.classList.add('active')
-//         // detailsClicked.classList.remove('active')
-//         // recipeClicked.classList.remove('active')
-
-//         detailsContainer.classList.remove('active')
-//         recipeContainer.classList.remove('active')
-
-//         detailsContainer.classList.add('hidden')
-//         recipeContainer.classList.add('hidden')
-
-//         image.classList.remove('active')
-//         image.classList.add('hidden')
-//         content.classList.remove('default')
-//         content.classList.add('full')
-//     }
-// }
-
-// Recipe onClick
-// recipeClicked.onclick = function() {
-//     if (this.classList.contains('active')) {
-//         return
-//     } else {
-//         // Display Content Container
-//         recipeContainer.classList.remove('hidden')
-//         recipeContainer.classList.add('active')
-
-//         // Toggle Button Styles
-//         // recipeClicked.classList.add('active')
-//         // detailsClicked.classList.remove('active')
-//         // ingredientsClicked.classList.remove('active')
-
-//         detailsContainer.classList.remove('active')
-//         ingredientsContainer.classList.remove('active')
-
-//         detailsContainer.classList.add('hidden')
-//         ingredientsContainer.classList.add('hidden')
-
-//         image.classList.remove('active')
-//         image.classList.add('hidden')
-//         content.classList.remove('default')
-//         content.classList.add('full')
-//     }
-// }

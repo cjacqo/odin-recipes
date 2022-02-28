@@ -50,7 +50,7 @@
     align-items: center;
     width: 100%;
     background: rgb(255,255,255);
-    position: absolute;
+    /* position: absolute; */
     top: 100%;
 }
 
@@ -142,6 +142,8 @@
 .container.active > .wrapper.content {
     width: 100%;
     height: 75vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 1.333rem;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -161,7 +163,7 @@
 
 .item.ingredient {
     flex: 1;
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -172,6 +174,21 @@
     width: 1.333rem;
     border: 1px solid #333;
     border-radius: 1px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.item.ingredient > .check > .fa-times {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: green;
+    font-size: 1.333rem;
+    font-weight: bold;
 }
 
 .item.ingredient:hover > .check {
@@ -235,6 +252,24 @@
     padding: 0;
 }
 
+.container.recipe > .wrapper.content > .wrapper.item {
+    padding-bottom: 1rem;
+}
+
+.box.step-num > .num > p {
+    margin: 0;
+    font-size: 1.333rem;
+}
+
+.box.step-content {
+    text-align: justify;
+}
+
+.box.step-content > .text > p {
+    margin: 0;
+    line-height: 1.33rem;
+}
+
 .wrapper.buttons {
     height: 100%;
     justify-content: space-between;
@@ -253,8 +288,10 @@
     cursor: pointer;
 }
 
-.wrapper.buttons > .link > a {
+.wrapper.buttons > .link > p {
+    display: inline-block;
     position: absolute;
+    margin: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -267,7 +304,7 @@
     background-color: #fff;
 }
 
-.wrapper.buttons > .link.active > a {
+.wrapper.buttons > .link.active > p {
     color: #222;
 }
 
@@ -284,6 +321,20 @@ img {
 .container.title {
     width: 100%;
     text-align: center;
+}
+
+.container.title > .back-icon {
+    position: absolute;
+    top: 1.555rem;
+    left: 1rem;
+    cursor: pointer
+}
+
+.container.title > .back-icon > a {
+    text-decoration: none;
+    height: 100%;
+    font-size: 1.333rem;
+    color: #333;
 }
 
 .container.title > .text-el {
