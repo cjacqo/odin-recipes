@@ -6,16 +6,14 @@
     font-size: 100%;
 }
 
-html,
 body {
-    height: 100%;
+    max-width: 100vw;
+    overflow: hidden !important;
 }
 
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    overflow: hidden;
     font-family: 'Varela Round', sans-serif;
 }
 
@@ -49,7 +47,8 @@ p {
     font-size: 0.75rem;
 }
 
-.s-text {
+.s-text,
+sup {
     font-size: 0.563rem;
 }
 
