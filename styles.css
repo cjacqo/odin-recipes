@@ -43,12 +43,15 @@ p {
     font-size: 1rem;
 }
 
+sup {
+    font-size: 0.8333rem;
+}
+
 .m-text {
     font-size: 0.75rem;
 }
 
-.s-text,
-sup {
+.s-text {
     font-size: 0.563rem;
 }
 
@@ -66,4 +69,10 @@ a {
 
 .bold {
     font-weight: bold;
+}
+
+/* Button */
+button {
+    border: none;
+    background-color: transparent;
 }

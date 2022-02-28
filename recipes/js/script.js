@@ -9,6 +9,40 @@ const detailsContainer = document.getElementById('detailsContainer')
 const ingredientsContainer = document.getElementById('ingredientsContainer')
 const recipeContainer = document.getElementById('recipeContainer')
 
+// Ingredient Elements
+let ingredients = document.querySelectorAll(".item.ingredient")
+
+// Add eventlisteners to ingredient buttons
+ingredients.forEach(function(ingredient) {
+    // Create child elements of ingredient button
+    let check = ingredient.querySelector('.check')
+    let item = ingredient.querySelector('.text')
+    let text = item.innerHTML
+
+    // Create boolean for checked
+    let isChecked
+    let innerCheck = check.children
+
+    if (innerCheck.length > 0) {
+        isChecked = true
+    } else {
+        isChecked = false
+    }
+
+    // Create value for icon
+    let checkMark = '<i class="fa-solid fa-check"></i>'
+
+    ingredient.addEventListener('click', function() {
+        isChecked = !isChecked
+
+        if (isChecked) {
+            check.innerHTML = checkMark
+        } else {
+            check.innerHTML = null
+        }
+    })
+})
+
 // Details onClick
 detailsClicked.onclick = function() {
     if (this.classList.contains('active')) {

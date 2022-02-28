@@ -74,7 +74,6 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    padding-left: 1rem;
     overflow: hidden;
     background-color: #fff;
 }
@@ -91,6 +90,8 @@
 
 .container.active > .wrapper.title {
     padding-bottom: 1rem;
+    padding-left: 1rem;
+
 }
 
 .container.active > .wrapper.title > h5 {
@@ -99,7 +100,7 @@
 
 .item.ingredient {
     flex: 1;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 1rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -117,7 +118,7 @@
 }
 
 .item.ingredient > .text.ingredient {
-    padding-left: 0.75rem;
+    padding-left: 0.85rem;
 }
 
 .text.ingredient > p {
