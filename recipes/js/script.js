@@ -10,7 +10,7 @@ const ingredientsContainer = document.getElementById('ingredientsContainer')
 const recipeContainer = document.getElementById('recipeContainer')
 
 // Ingredient Elements
-let ingredients = document.querySelectorAll(".item.ingredient")
+let ingredients = document.querySelectorAll('.item.ingredient')
 
 // Add eventlisteners to ingredient buttons
 ingredients.forEach(function(ingredient) {
@@ -43,78 +43,183 @@ ingredients.forEach(function(ingredient) {
     })
 })
 
-// Details onClick
-detailsClicked.onclick = function() {
-    if (this.classList.contains('active')) {
-        return
-    } else {
-        // Display Content Container
-        detailsContainer.classList.remove('hidden')
-        detailsContainer.classList.add('active')
+// Button Elements
+let buttons = document.querySelectorAll('.link');
 
-        // Toggle Button Styles
-        detailsClicked.classList.add('active')
-        ingredientsClicked.classList.remove('active')
-        recipeClicked.classList.remove('active')
-
-        // Remove class names of 'hidden' & 'full' & 'active' on elements
-        image.classList.remove('hidden')
-        content.classList.remove('full')
-
-        ingredientsContainer.classList.remove('active')
-        recipeContainer.classList.remove('active')
-
-        ingredientsContainer.classList.add('hidden')
-        recipeContainer.classList.add('hidden')
-    }
+// Check if active
+function checkActive(btn) {
+    return btn.classList.contains('active')
 }
+
+// Toggle animation class names handler
+function handleAnimations(prev, clicked) {
+    // get id's of both buttons (params)
+    let prevId = prev.id
+    let clickedId = clicked.id
+    
+    // remove active class name from buttons
+    // --- styles background color of button
+    prev.classList.remove('active')
+    clicked.classList.add('active')
+
+    // check if clickedId is equal to 'detailsBtn'
+    // --- this is the default display, as well as the only one that shows the image
+    switch (clickedId) {
+        case 'detailsBtn':
+            // animate image to open from top to bottom
+            image.classList.remove('hidden')
+            image.classList.add('active')
+
+            // animate the content container to shrink down to default size
+            content.classList.remove('full')
+            content.classList.add('default')
+
+            // animate opacity of content
+            detailsContainer.classList.remove('hidden')
+            detailsContainer.classList.add('active')
+
+            ingredientsContainer.classList.remove('active')
+            ingredientsContainer.classList.add('hidden')
+
+            recipeContainer.classList.remove('active')
+            recipeContainer.classList.add('hidden')
+            return;
+        default:
+            // animate image to close from bottom to top
+            image.classList.add('hidden')
+            image.classList.remove('active')
+
+            // animate the content container to grow up to full size
+            content.classList.add('full')
+            content.classList.remove('default')
+
+            // animate opacity of content
+            detailsContainer.classList.add('hidden')
+            detailsContainer.classList.remove('active')
+
+            // check the clicked id
+            if (clickedId === 'ingredientsBtn') {
+                console.log("INDNDN")
+                ingredientsContainer.classList.remove('hidden')
+                ingredientsContainer.classList.add('active')
+
+                recipeContainer.classList.remove('active')
+                recipeContainer.classList.add('hidden')                
+            } else {
+                recipeContainer.classList.remove('hidden')
+                recipeContainer.classList.add('active')
+                
+                ingredientsContainer.classList.remove('active')
+                ingredientsContainer.classList.add('hidden')
+            }
+
+            return;
+    }    
+}
+
+let btnArr = []
+
+// Add eventlisteners to buttons
+buttons.forEach(function(button) {
+    let btnId = button.id
+    let btn = button
+    let isActive
+
+    button.addEventListener('click', function() {
+        // get current active button
+        let prev = document.querySelectorAll('.link.active')
+        let prevId = prev[0].id
+
+        // get clicked button
+        let clicked = btn
+        let clickedId = clicked.id
+
+        if (prevId === clickedId) {
+            return
+        } else {
+            handleAnimations(prev[0], clicked)
+        }
+    })
+})
+
+// Details onClick
+// detailsClicked.onclick = function() {
+//     if (this.classList.contains('active')) {
+//         return
+//     } else {
+//         // Display Content Container
+//         detailsContainer.classList.remove('hidden')
+//         detailsContainer.classList.add('active')
+
+//         // Toggle Button Styles
+//         // detailsClicked.classList.add('active')
+//         // ingredientsClicked.classList.remove('active')
+//         // recipeClicked.classList.remove('active')
+
+//         // Remove class names of 'hidden' & 'full' & 'active' on elements
+//         image.classList.remove('hidden')
+//         image.classList.add('active')
+//         content.classList.remove('full')
+//         content.classList.add('default')
+
+//         ingredientsContainer.classList.remove('active')
+//         recipeContainer.classList.remove('active')
+
+//         ingredientsContainer.classList.add('hidden')
+//         recipeContainer.classList.add('hidden')
+//     }
+// }
 
 // Ingredients onClick
-ingredientsClicked.onclick = function() {
-    if (this.classList.contains('active')) {
-        return
-    } else {
-        // Display Content Container
-        ingredientsContainer.classList.remove('hidden')
-        ingredientsContainer.classList.add('active')
+// ingredientsClicked.onclick = function() {
+//     if (this.classList.contains('active')) {
+//         return
+//     } else {
+//         // Display Content Container
+//         ingredientsContainer.classList.remove('hidden')
+//         ingredientsContainer.classList.add('active')
 
-        // Toggle Button Styles
-        ingredientsClicked.classList.add('active')
-        detailsClicked.classList.remove('active')
-        recipeClicked.classList.remove('active')
+//         // Toggle Button Styles
+//         // ingredientsClicked.classList.add('active')
+//         // detailsClicked.classList.remove('active')
+//         // recipeClicked.classList.remove('active')
 
-        detailsContainer.classList.remove('active')
-        recipeContainer.classList.remove('active')
+//         detailsContainer.classList.remove('active')
+//         recipeContainer.classList.remove('active')
 
-        detailsContainer.classList.add('hidden')
-        recipeContainer.classList.add('hidden')
+//         detailsContainer.classList.add('hidden')
+//         recipeContainer.classList.add('hidden')
 
-        image.classList.add('hidden')
-        content.classList.add('full')
-    }
-}
+//         image.classList.remove('active')
+//         image.classList.add('hidden')
+//         content.classList.remove('default')
+//         content.classList.add('full')
+//     }
+// }
 
 // Recipe onClick
-recipeClicked.onclick = function() {
-    if (this.classList.contains('active')) {
-        return
-    } else {
-        // Display Content Container
-        recipeContainer.classList.remove('hidden')
-        recipeContainer.classList.add('active')
+// recipeClicked.onclick = function() {
+//     if (this.classList.contains('active')) {
+//         return
+//     } else {
+//         // Display Content Container
+//         recipeContainer.classList.remove('hidden')
+//         recipeContainer.classList.add('active')
 
-        // Toggle Button Styles
-        recipeClicked.classList.add('active')
-        detailsClicked.classList.remove('active')
-        ingredientsClicked.classList.remove('active')
+//         // Toggle Button Styles
+//         // recipeClicked.classList.add('active')
+//         // detailsClicked.classList.remove('active')
+//         // ingredientsClicked.classList.remove('active')
 
-        detailsContainer.classList.remove('active')
-        ingredientsContainer.classList.remove('active')
+//         detailsContainer.classList.remove('active')
+//         ingredientsContainer.classList.remove('active')
 
-        detailsContainer.classList.add('hidden')
-        ingredientsContainer.classList.add('hidden')
+//         detailsContainer.classList.add('hidden')
+//         ingredientsContainer.classList.add('hidden')
 
-        image.classList.add('hidden')
-        content.classList.add('full')
-    }
-}
+//         image.classList.remove('active')
+//         image.classList.add('hidden')
+//         content.classList.remove('default')
+//         content.classList.add('full')
+//     }
+// }
