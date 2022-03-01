@@ -187,7 +187,7 @@ button {
     left: 0;
     width: 100%;
     min-height: 3.269rem;
-    background-color: rgba(0,0,0,0.333);
+    background-color: rgba(0,0,0,0.633);
     display: flex;
     align-items: center;
 }
@@ -197,6 +197,7 @@ button {
     margin: 0;
     font-size: calc(100% + 2vw);
     flex: 1;
+    letter-spacing: 0.20rem;
 }
 
 .card-details {
